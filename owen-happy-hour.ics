@@ -1,0 +1,24 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Ricky Scheufler//Forno Happy Hour//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:forno-happy-hour-20261001@r354306-cloud.github.io
+DTSTAMP:20260929T191954Z
+DTSTART:20261001T203000Z
+DTEND:20261001T220000Z
+SUMMARY:Forno happy hour with Ricky
+LOCATION:Forno Kitchen + Bar\, 721 N High St\, Columbus\, OH 43215
+DESCRIPTION:Transportation provided.\nDrafts\, cocktails\, wine and pizza a
+ re half off until 6.\nhttps://r354306-cloud.github.io/owen-happy-hour/
+URL:https://r354306-cloud.github.io/owen-happy-hour/
+STATUS:CONFIRMED
+TRANSP:OPAQUE
+BEGIN:VALARM
+ACTION:DISPLAY
+DESCRIPTION:Forno happy hour in 1 hour
+TRIGGER:-PT1H
+END:VALARM
+END:VEVENT
+END:VCALENDAR

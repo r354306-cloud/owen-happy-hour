@@ -1,0 +1,602 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#221c19">
+<title>Happy hour at Forno, Thursday 4:30</title>
+<meta name="description" content="From Ricky: happy hour at Forno Kitchen + Bar, Thursday, October 1 at 4:30 pm.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Happy hour at Forno, Thursday 4:30">
+<meta property="og:description" content="From Ricky. Thursday, October 1 at 4:30, Forno Kitchen + Bar in the Short North. Transportation provided.">
+<meta property="og:url" content="https://r354306-cloud.github.io/owen-happy-hour/">
+<meta property="og:image" content="https://r354306-cloud.github.io/owen-happy-hour/preview.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23f27719'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=IBM+Plex+Sans+Condensed:wght@500&amp;display=swap">
+<style>
+  /* A memo on Forno's colors: their sign orange, oven-black behind the page,
+     warm white paper. The accounting shows up in the structure, not in jokes:
+     memo header, and the details set like a statement schedule with double rules. */
+  :root {
+    --paper: #fcf6ef;
+    --rule: #ead8c6;
+    --form-ink: #9c4910;
+    --ink: #2f2926;
+    --ink-soft: #6b605a;
+    --orange: #f27719;
+    --orange-fill: #e36a12;
+    --orange-deep: #a8500f;
+    --orange-text: #b24e08;
+    --desk: #221c19;
+    --desk-ink: #eadfd5;
+    --sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+    --label: "IBM Plex Sans Condensed", "Arial Narrow", "IBM Plex Sans", system-ui, sans-serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html {
+    background:
+      radial-gradient(120% 60% at 50% -12%, rgba(242, 119, 25, .22), transparent 62%) no-repeat,
+      var(--desk);
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    min-height: 100dvh;
+    color: var(--ink);
+    font-family: var(--sans);
+    padding:
+      max(28px, env(safe-area-inset-top))
+      max(12px, env(safe-area-inset-right))
+      max(28px, env(safe-area-inset-bottom))
+      max(12px, env(safe-area-inset-left));
+  }
+
+  .sheet {
+    position: relative;
+    isolation: isolate;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 44px clamp(18px, 6vw, 44px) 32px;
+    background: var(--paper);
+    border-radius: 2px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3), 0 26px 44px -20px rgba(0, 0, 0, .75);
+  }
+
+  .sheet::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: .45;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .36 0 0 0 0 .24 0 0 0 0 .16 0 0 0 .3 -.09'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
+  }
+
+  .band {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 8px;
+    border-radius: 2px 2px 0 0;
+    background: var(--orange);
+  }
+
+  /* Memo header */
+  .memo { margin: 0 0 18px; }
+
+  .memo dl { margin: 0; }
+
+  .memo dl > div {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    align-items: baseline;
+    padding: 8px 0 7px;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .memo dl > div.re {
+    padding: 10px 0 4px;
+    border-bottom: 0;
+  }
+
+  .memo dt,
+  .schedule th {
+    font-family: var(--label);
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--form-ink);
+  }
+
+  .memo dd {
+    margin: 0;
+    font-size: 17px;
+  }
+
+  .memo .re dd {
+    font-size: clamp(22px, 6vw, 26px);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+  }
+
+  /* Details, set like a statement schedule */
+  .schedule {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 3px double var(--form-ink);
+    border-bottom: 3px double var(--form-ink);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  .schedule th,
+  .schedule td {
+    padding: 11px 0;
+    vertical-align: baseline;
+    text-align: left;
+    line-height: 1.5;
+  }
+
+  .schedule th {
+    width: 7.6em;
+    padding-right: 12px;
+  }
+
+  .schedule td { font-size: 16px; }
+
+  .schedule tr + tr > * { border-top: 1px solid var(--rule); }
+
+  .schedule .sub {
+    display: block;
+    font-size: 14px;
+    color: var(--ink-soft);
+  }
+
+  .schedule a {
+    color: var(--orange-text);
+    font-weight: 600;
+    text-decoration-thickness: 1.5px;
+    text-underline-offset: 3px;
+  }
+
+  /* Quick quiz */
+  .quiz { margin-top: 28px; }
+
+  .quiz h2 {
+    margin: 0 0 2px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  .q {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .q-text {
+    position: relative;
+    margin: 0 0 10px;
+    padding-left: 22px;
+    font-size: 16px;
+    line-height: 1.45;
+  }
+
+  .q-num {
+    position: absolute;
+    left: 0;
+    font-family: var(--label);
+    font-weight: 500;
+    color: var(--form-ink);
+  }
+
+  .opts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+
+  .opts button {
+    position: relative;
+    min-height: 44px;
+    padding: 8px 6px;
+    border: 1px solid #d9bda2;
+    border-radius: 6px;
+    background: #fffaf5;
+    color: var(--ink);
+    font: inherit;
+    font-size: 15px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    transition: background-color .15s, border-color .15s, opacity .15s;
+  }
+
+  .opts button:focus-visible {
+    outline: 2px solid var(--orange-text);
+    outline-offset: 2px;
+  }
+
+  .opts button[aria-disabled="true"] { cursor: default; }
+
+  .opts .is-right {
+    border-color: var(--orange-fill);
+    background: rgba(242, 119, 25, .12);
+    font-weight: 600;
+  }
+
+  .opts .is-right::after {
+    content: "\2713";
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--orange-fill);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 20px;
+    text-align: center;
+  }
+
+  .opts .is-wrong {
+    color: var(--ink-soft);
+    text-decoration: line-through;
+    text-decoration-thickness: 1.5px;
+  }
+
+  .opts .is-dim { opacity: .55; }
+
+  .fb {
+    margin: 10px 0 0;
+    font-size: 14.5px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  .fb:empty { display: none; }
+
+  .score {
+    margin: 12px 0 0;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .score:empty { display: none; }
+
+  /* Calendar */
+  .post { margin-top: 26px; }
+
+  .inapp {
+    margin: 0 0 16px;
+    padding: 12px 14px;
+    border: 1.5px solid var(--orange-fill);
+    border-radius: 6px;
+    background: rgba(242, 119, 25, .08);
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .inapp.flash { animation: flash .7s ease-out; }
+
+  @keyframes flash {
+    from { background: rgba(242, 119, 25, .28); }
+    to   { background: rgba(242, 119, 25, .08); }
+  }
+
+  .post-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 56px;
+    padding: 0 20px;
+    border-radius: 6px;
+    background: var(--orange-fill);
+    box-shadow: 0 2px 0 var(--orange-deep);
+    color: #fff;
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+    -webkit-tap-highlight-color: transparent;
+    transition: transform .08s, box-shadow .08s;
+  }
+
+  .post-btn:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 0 var(--orange-deep);
+  }
+
+  .post-btn svg {
+    width: 21px;
+    height: 21px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+  }
+
+  .post-help {
+    margin: 12px 0 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.45;
+    color: var(--ink-soft);
+  }
+
+  .bucks {
+    margin: 22px 0 0;
+    text-align: center;
+    font-family: var(--label);
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    color: var(--desk-ink);
+  }
+
+  .post-btn:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 4px;
+  }
+
+  .schedule a:focus-visible {
+    outline: 2px solid var(--orange-text);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 480px) {
+    body {
+      padding-left: max(8px, env(safe-area-inset-left));
+      padding-right: max(8px, env(safe-area-inset-right));
+    }
+
+    .sheet { padding: 40px 18px 28px; }
+
+    .schedule th { width: 7.2em; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .inapp.flash { animation: none; }
+    .post-btn,
+    .opts button { transition: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <article class="sheet">
+    <div class="band" aria-hidden="true"></div>
+
+    <header class="memo">
+      <h1 class="sr-only">Happy hour at Forno on Thursday, from Ricky to Owen</h1>
+      <dl>
+        <div><dt>To</dt><dd>Owen</dd></div>
+        <div><dt>From</dt><dd>Ricky</dd></div>
+        <div class="re"><dt>Re</dt><dd>Happy hour at Forno on Thursday</dd></div>
+      </dl>
+    </header>
+
+
+    <table class="schedule">
+      <caption class="sr-only">Details</caption>
+      <tbody>
+        <tr>
+          <th scope="row">Date</th>
+          <td>Thursday, October 1</td>
+        </tr>
+        <tr>
+          <th scope="row">Time</th>
+          <td>4:30 to 6:00 pm<span class="sub" id="when"></span></td>
+        </tr>
+        <tr>
+          <th scope="row">Place</th>
+          <td>Forno Kitchen + Bar<span class="sub">721 N High St, Short North. <a id="maps" href="https://www.google.com/maps/search/?api=1&amp;query=Forno%20Kitchen%20and%20Bar%2C%20721%20N%20High%20St%2C%20Columbus%2C%20OH%2043215" target="_blank" rel="noopener">Directions</a></span></td>
+        </tr>
+        <tr>
+          <th scope="row">Specials</th>
+          <td>Half off drafts, cocktails, wine and pizza until 6</td>
+        </tr>
+        <tr>
+          <th scope="row">Transportation</th>
+          <td>Provided</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <section class="quiz" aria-labelledby="quiz-title">
+      <h2 id="quiz-title">Quick quiz</h2>
+
+      <div class="q" data-answer="b"
+           data-right="Right. $60,000 spread evenly over 10 years."
+           data-wrong="It’s $6,000. $60,000 spread evenly over 10 years.">
+        <p class="q-text" id="q1"><span class="q-num">1</span>Say Forno’s stone-fired oven cost $60,000 and lasts 10 years, no salvage. Yearly straight-line depreciation?</p>
+        <div class="opts" role="group" aria-labelledby="q1">
+          <button type="button" data-k="a">$5,000</button>
+          <button type="button" data-k="b">$6,000</button>
+          <button type="button" data-k="c">$60,000</button>
+        </div>
+        <p class="fb" aria-live="polite"></p>
+      </div>
+
+      <div class="q" data-answer="c"
+           data-right="Right. Until it’s used, the card sits on Forno’s books as a liability."
+           data-wrong="It’s when it’s used. Until then the card sits on Forno’s books as a liability.">
+        <p class="q-text" id="q2"><span class="q-num">2</span>You pay at happy hour with a Forno gift card someone bought you last month. When does Forno record that revenue?</p>
+        <div class="opts" role="group" aria-labelledby="q2">
+          <button type="button" data-k="a">When sold</button>
+          <button type="button" data-k="b">Year end</button>
+          <button type="button" data-k="c">When used</button>
+        </div>
+        <p class="fb" aria-live="polite"></p>
+      </div>
+
+      <div class="q" data-answer="b"
+           data-right="Right. Forno owes it to the staff, so it’s a liability until it’s paid out."
+           data-wrong="It’s a liability. Forno just holds it until it pays the staff.">
+        <p class="q-text" id="q3"><span class="q-num">3</span>You leave a $10 tip on your card at happy hour. How does Forno record it?</p>
+        <div class="opts" role="group" aria-labelledby="q3">
+          <button type="button" data-k="a">Revenue</button>
+          <button type="button" data-k="b">Liability</button>
+          <button type="button" data-k="c">Expense</button>
+        </div>
+        <p class="fb" aria-live="polite"></p>
+      </div>
+
+      <p class="score" id="score" aria-live="polite"></p>
+    </section>
+
+    <div class="post">
+      <p class="inapp" id="inapp" role="note" hidden></p>
+      <a class="post-btn" id="post" href="owen-happy-hour.ics" type="text/calendar">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="1.5"/><path d="M3.5 9.8h17M8 3v4M16 3v4"/></svg>
+        <span>Add to Apple Calendar</span>
+      </a>
+      <p class="post-help" id="post-help">If it asks, tap Allow, then Add to Calendar.</p>
+    </div>
+  </article>
+
+  <p class="bucks">Go Bucks.</p>
+</main>
+
+<script>
+(function () {
+  // Thursday, October 1, 2026 in Columbus (EDT, UTC-4)
+  var START = Date.UTC(2026, 9, 1, 20, 30); // 4:30 pm
+  var END = Date.UTC(2026, 9, 1, 22, 0);    // 6:00 pm, when half off ends
+
+  var when = document.getElementById('when');
+
+  function unit(n, word) {
+    return n + ' ' + word + (n === 1 ? '' : 's');
+  }
+
+  function update() {
+    var now = Date.now();
+    if (now >= END) { when.textContent = ''; return; }
+    if (now >= START) { when.textContent = 'Happening now'; return; }
+    var mins = Math.ceil((START - now) / 60000);
+    var d = Math.floor(mins / 1440);
+    var h = Math.floor((mins % 1440) / 60);
+    var m = mins % 60;
+    var parts = [];
+    if (d) parts.push(unit(d, 'day'));
+    if (h) parts.push(unit(h, 'hour'));
+    if (!d && m) parts.push(unit(m, 'minute'));
+    when.textContent = 'Starts in ' + parts.join(', ');
+  }
+
+  update();
+  setInterval(update, 30000);
+
+  // Apple Maps on iPhone and iPad, Google Maps everywhere else
+  var ua = navigator.userAgent;
+  var apple = /iPhone|iPad|iPod/.test(ua) || (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+  if (apple) {
+    document.getElementById('maps').href =
+      'https://maps.apple.com/?q=Forno%20Kitchen%20and%20Bar%2C%20721%20N%20High%20St%2C%20Columbus%2C%20OH%2043215';
+  }
+
+  // Quick quiz: one tap per question, then show the answer
+  var qs = document.querySelectorAll('.q');
+  var scoreEl = document.getElementById('score');
+  var answered = 0;
+  var right = 0;
+
+  Array.prototype.forEach.call(qs, function (q) {
+    var answer = q.getAttribute('data-answer');
+    var fb = q.querySelector('.fb');
+    var btns = q.querySelectorAll('.opts button');
+    Array.prototype.forEach.call(btns, function (btn) {
+      btn.addEventListener('click', function () {
+        if (q.classList.contains('done')) return;
+        q.classList.add('done');
+        var ok = btn.getAttribute('data-k') === answer;
+        Array.prototype.forEach.call(btns, function (b) {
+          b.setAttribute('aria-disabled', 'true');
+          if (b.getAttribute('data-k') === answer) b.classList.add('is-right');
+          else if (b === btn) b.classList.add('is-wrong');
+          else b.classList.add('is-dim');
+        });
+        btn.setAttribute('aria-pressed', 'true');
+        fb.textContent = q.getAttribute(ok ? 'data-right' : 'data-wrong');
+        answered++;
+        if (ok) right++;
+        if (answered === qs.length) {
+          scoreEl.textContent = right + ' of ' + qs.length + '. See you Thursday.';
+        }
+      });
+    });
+  });
+
+  // Instagram, Snapchat and other in-app browsers can't hand an .ics to Calendar,
+  // so inside one of those, explain how to get to Safari instead of opening the file.
+  var post = document.getElementById('post');
+  var note = document.getElementById('inapp');
+  var help = document.getElementById('post-help');
+
+  var inApp = null;
+  if (apple) {
+    var apps = [
+      [/Instagram/, 'Instagram'],
+      [/Barcelona/, 'Threads'],
+      [/FBAN\/Messenger|MessengerForiOS/, 'Messenger'],
+      [/FBAN|FBAV|FB_IAB|FBIOS/, 'Facebook'],
+      [/Snapchat/, 'Snapchat'],
+      [/musical_ly|BytedanceWebview|TikTok/, 'TikTok'],
+      [/LinkedInApp/, 'LinkedIn'],
+      [/GroupMe/, 'GroupMe'],
+      [/GSA\//, 'the Google app']
+    ];
+    for (var i = 0; i < apps.length; i++) {
+      if (apps[i][0].test(ua)) { inApp = apps[i][1]; break; }
+    }
+    if (!inApp && !/Safari\//.test(ua)) inApp = 'this app';
+  }
+
+  if (inApp) {
+    var how = (inApp === 'Instagram' || inApp === 'Threads')
+      ? 'Tap \u2022\u2022\u2022 at the top right, choose Open in external browser, then tap the button below.'
+      : 'Open this page in Safari from the \u2022\u2022\u2022 or share menu, then tap the button below.';
+    note.textContent = inApp.charAt(0).toUpperCase() + inApp.slice(1) +
+      '\u2019s browser can\u2019t add calendar events. ' + how;
+    note.hidden = false;
+    help.hidden = true;
+  }
+
+  post.addEventListener('click', function (e) {
+    if (!inApp) return;
+    e.preventDefault();
+    note.classList.remove('flash');
+    void note.offsetWidth;
+    note.classList.add('flash');
+  });
+})();
+</script>
+</body>
+</html>
